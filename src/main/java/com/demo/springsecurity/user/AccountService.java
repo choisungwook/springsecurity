@@ -48,7 +48,7 @@ public class AccountService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Account find_user = accountRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("회원이 존재하지 않습니다"));
-        log.debug(find_user.getUsername());
+        log.debug("[로그인 시도] 계정조회 성공 -> " + username);
         return new AccountDetail(find_user);
     }
 }
