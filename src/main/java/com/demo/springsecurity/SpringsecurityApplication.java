@@ -14,20 +14,4 @@ public class SpringsecurityApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringsecurityApplication.class, args);
 	}
-
-	@Bean
-	public UserDetailsService users() {
-		UserDetails user = User.builder()
-				.username("user")
-				.password("{noop}password")
-				.roles("USER")
-				.build();
-		UserDetails admin = User.builder()
-				.username("admin")
-				.password("{noop}password")
-				.roles("USER", "ADMIN")
-				.build();
-		return new InMemoryUserDetailsManager(user, admin);
-	}
-
 }

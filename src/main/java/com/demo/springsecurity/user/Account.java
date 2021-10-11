@@ -9,11 +9,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "account")
 @NoArgsConstructor
+@Getter
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "account_id")
-    @Getter
     private Long id;
 
     @Column(nullable = false, unique = true)
