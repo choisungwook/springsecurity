@@ -37,9 +37,6 @@ export default {
     password: "",
   }),
   methods: {
-    abc() {
-      console.log("AA");
-    },
     signup() {
       signupAPI
         .signup(this.username, this.password)
