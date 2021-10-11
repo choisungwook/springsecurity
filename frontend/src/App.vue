@@ -5,10 +5,10 @@
 
       <v-toolbar-title>Spring Security Example</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn>
+      <v-btn to="/signup">
         <span>회원가입</span>
       </v-btn>
-      <v-btn>
+      <v-btn to="/login">
         <span>로그인</span>
       </v-btn>
     </v-app-bar>

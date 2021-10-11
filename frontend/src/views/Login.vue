@@ -2,7 +2,7 @@
   <v-form>
     <v-container>
       <v-row>
-        <h1>회원가입 페이지입니다</h1>
+        <h1>로그인 페이지입니다</h1>
       </v-row>
       <v-row>
         <v-col cols="12" md="4">
@@ -25,14 +25,14 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-btn type="submit" @click="signup"> 회원가입 </v-btn>
+        <v-btn  @click="login"> 로그인 </v-btn>
       </v-row>
     </v-container>
   </v-form>
 </template>
 
 <script>
-import * as signupAPI from "@/api/signup";
+import * as loginAPI from "@/api/login";
 
 export default {
   data: () => ({
@@ -40,9 +40,12 @@ export default {
     password: "",
   }),
   methods: {
-    signup() {
-      signupAPI
-        .signup(this.username, this.password)
+    abc() {
+      console.log("AA");
+    },
+    login() {
+      loginAPI
+        .login(this.username, this.password)
         .then((data) => {
           console.log("success");
           console.log(data);
