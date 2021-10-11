@@ -38,10 +38,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .headers()
                 .frameOptions().disable()
                 .and()
-            .logout()
+            .formLogin()
                 .permitAll()
                 .and()
-            .httpBasic()
+            .logout()
+                .permitAll()
                 .and()
             .csrf().disable();
     }
