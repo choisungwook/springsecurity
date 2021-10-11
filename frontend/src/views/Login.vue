@@ -38,7 +38,7 @@ export default {
   data: () => ({
     username: "",
     password: "",
-    session: "",
+    // session: "",
   }),
   methods: {
     login() {
@@ -48,7 +48,9 @@ export default {
       loginAPI
         .login(form)
         .then((data) => {
-          this.session = data.data;
+          this.$store.dispatch("session/setSession", data.data);
+          console.log(this.$store.getters["session/getSession"]);
+          // this.session = data.data;
         })
         .catch((error) => {
           console.log(error);
