@@ -46,7 +46,9 @@ export default {
       form.append("password", this.password);
       loginAPI
         .login(form)
-        .then(() => {})
+        .then(() => {
+          this.$store.dispatch("login/Login");
+        })
         .catch((error) => {
           console.log(error);
         });
