@@ -38,7 +38,6 @@ export default {
   data: () => ({
     username: "",
     password: "",
-    // session: "",
   }),
   methods: {
     login() {
@@ -47,11 +46,7 @@ export default {
       form.append("password", this.password);
       loginAPI
         .login(form)
-        .then((data) => {
-          this.$store.dispatch("session/setSession", data.data);
-          console.log(this.$store.getters["session/getSession"]);
-          // this.session = data.data;
-        })
+        .then(() => {})
         .catch((error) => {
           console.log(error);
         });
