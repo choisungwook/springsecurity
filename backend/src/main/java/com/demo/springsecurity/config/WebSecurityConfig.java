@@ -40,6 +40,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .formLogin()
                 .permitAll()
+                .failureHandler(new LoginFailHandler())
+                .successHandler(new LoginSuccessHandler())
                 .and()
             .logout()
                 .permitAll()
