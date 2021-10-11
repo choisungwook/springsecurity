@@ -1,7 +1,7 @@
 package com.demo.springsecurity.controller;
 
+import com.demo.springsecurity.user.AccountDetail;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class DemoController {
 
     @GetMapping("/session")
-    public ResponseCookieDTO hello(@AuthenticationPrincipal User user, HttpSession HttpSession) {
+    public ResponseCookieDTO hello(@AuthenticationPrincipal AccountDetail user, HttpSession HttpSession) {
         String username = "empty";
         String session_id = "empty";
 
