@@ -38,17 +38,17 @@ export default {
   data: () => ({
     username: "",
     password: "",
+    session: "",
   }),
   methods: {
-    abc() {
-      console.log("AA");
-    },
     login() {
+      const form = new FormData();
+      form.append("username", this.username);
+      form.append("password", this.password);
       loginAPI
-        .login(this.username, this.password)
+        .login(form)
         .then((data) => {
-          console.log("success");
-          console.log(data);
+          this.session = data.data;
         })
         .catch((error) => {
           console.log(error);

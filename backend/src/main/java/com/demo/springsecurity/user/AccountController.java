@@ -27,6 +27,7 @@ public class AccountController {
     public ResponseSignUpDTO SignUp(@RequestBody RequestSignUpDTO requestSignUpDTO) {
         log.debug("회원가입 요청");
         Long save_id = accountService.save(requestSignUpDTO);
+        log.debug("회원가입 성공");
 
         return new ResponseSignUpDTO(save_id);
     }

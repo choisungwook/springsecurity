@@ -25,7 +25,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-btn type="submit" @click="signup"> 회원가입 </v-btn>
+        <v-btn @click="signup"> 회원가입 </v-btn>
       </v-row>
     </v-container>
   </v-form>
