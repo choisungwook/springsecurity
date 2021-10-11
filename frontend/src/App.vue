@@ -11,6 +11,9 @@
       <v-btn to="/login">
         <span>로그인</span>
       </v-btn>
+      <v-btn to="/session">
+        <span>세션보기</span>
+      </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" fixed temporary>
