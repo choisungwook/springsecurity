@@ -2,7 +2,7 @@ FROM node:lts-alpine as build-stage
 ENV NODE_ENV=production
 WORKDIR /app
 COPY package*.json ./
-RUN npm install --production
+RUN npm install -g @vue/cli@latest && npm install --production
 COPY . .
 RUN npm run build
 
