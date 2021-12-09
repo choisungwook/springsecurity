@@ -42,7 +42,7 @@ export default {
   methods: {
     login() {
       const form = new FormData();
-      form.append("username", this.username);
+      form.append("email", this.username);
       form.append("password", this.password);
       loginAPI
         .login(form)
