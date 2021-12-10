@@ -41,11 +41,11 @@ export default {
   }),
   methods: {
     login() {
-      const form = new FormData();
-      form.append("email", this.username);
-      form.append("password", this.password);
+      const params = new URLSearchParams();
+      params.append("email", this.username);
+      params.append("password", this.password);
       loginAPI
-        .login(form)
+        .login(params)
         .then(() => {
           this.$store.dispatch("login/Login");
         })

@@ -6,6 +6,7 @@ export async function signup(username, password) {
     {
       username: username,
       password: password,
+      nickname: username
     },
     {
       "content-type": "application/json",
