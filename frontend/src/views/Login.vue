@@ -49,7 +49,8 @@ export default {
         .then((response) => {
           this.$store.dispatch("login/Login");
           console.log("login success");
-          // JSESSIONID
+
+          this.$cookies.set("JSESSIONID", response.data, "30m");
           console.log(response.data);
         })
         .catch((error) => {
