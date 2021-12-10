@@ -46,10 +46,11 @@ export default {
       params.append("password", this.password);
       loginAPI
         .login(params)
-        .then((data) => {
+        .then((response) => {
           this.$store.dispatch("login/Login");
           console.log("login success");
-          console.log(data);
+          // JSESSIONID
+          console.log(response.data);
         })
         .catch((error) => {
           console.log(error);
