@@ -2,7 +2,7 @@ import http from "./http";
 
 export async function sessioninfo() {
   return http.get(
-    "/session",
+    "/success",
     {},
     {
       "content-type": "application/json",
