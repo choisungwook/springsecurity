@@ -36,10 +36,9 @@ export default {
       if (logined === false) {
         this.snackbar = true;
       } else {
-        const sessionid = this.$cookies.get("JSESSIONID");
-        console.log("[세션요청] 세션id: " + sessionid);
-
-        SessionAPI.sessioninfo()
+        const token = this.$cookies.get("tmp_token");
+        console.log("토큰출력: " + token);
+        SessionAPI.sessioninfo(token)
           .then((data) => {
             console.log("인증 성공");
             console.log(data.data);

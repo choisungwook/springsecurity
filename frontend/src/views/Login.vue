@@ -41,17 +41,15 @@ export default {
   }),
   methods: {
     login() {
-      const params = new URLSearchParams();
-      params.append("email", this.username);
-      params.append("password", this.password);
       loginAPI
-        .login(params)
+        .login(this.username, this.password)
         .then((response) => {
           this.$store.dispatch("login/Login");
-          console.log("login success");
 
-          this.$cookies.set("JSESSIONID", response.data, "30m");
-          console.log(response.data);
+          console.log("login success");
+          const token = response.headers['authorization'];
+          console.log(token);
+          this.$cookies.set("tmp_token", token);
         })
         .catch((error) => {
           console.log(error);
